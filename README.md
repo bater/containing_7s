@@ -59,7 +59,7 @@ Comparison:
 ```
 [code](benchmark/string-include-is-fastest.rb)
 
-### `Range#count` slightly faster
+### `Range#count` is slightly faster
 ```
 $ ruby benchmark/range-count-is-faster.rb
 

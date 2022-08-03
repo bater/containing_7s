@@ -18,6 +18,9 @@ def count_numbers_content_7(n)
   ('1'..n.to_s).count { |i| i.include?(SEVEN) }
 end
 ```
+> **Note**
+> This method might refactor later but compute logic remain the same.
+
 We can split this as two part. Firstly, I create a `range` according to given max number N, which is `('1'..n.to_s)`.
 
 I make a `String` range instead of `Integer` for the next step.

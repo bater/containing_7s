@@ -1,7 +1,7 @@
 require "benchmark/ips"
 
+TEST_STR = '17'.freeze
 SEVEN = '7'.freeze
-TEST_STR = ('1'..'10').to_a.join.freeze
 REGEX = /7/
 
 Benchmark.ips do |x|

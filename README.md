@@ -30,9 +30,6 @@ Secondly, I count the numbers which content 7 by `Range#count`, it inherit from 
 ## Validation
 TBD
 
-## Meta-programing
-TBD
-
 ## Make small things
 I'd like to explian my design thinking about my code.
 
@@ -61,6 +58,8 @@ def count_range_include_7(range)
 end
 ```
 In this style, the method is small and simple enough that not even need any comment and document, the code explain itself. And I believe the best document is readable code.
+
+But in the end, after I added the `String#include_7?` on `core_ext.rb`, I think it's too simple that should be one line again. So this part become just an idea sharing only.
 
 ## Fast Ruby
 Inspired by [fast-ruby](https://github.com/fastruby/fast-ruby). When I have more than one option to implement the code and logic, I will choose faster one.

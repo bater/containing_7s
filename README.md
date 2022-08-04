@@ -61,6 +61,20 @@ In this style, the method is small and simple enough that not even need any comm
 
 But in the end, after I added the `String#include_7?` on `core_ext.rb`, I think it's too simple that should be one line again. So this part become just an idea sharing only.
 
+In my mind, the proper line of code comparison would be like:
+```rb
+# It's long enough to consider split as minor methods, because it's more than two concepts.
+def count_numbers_content_7(n)
+  ('1'..n.to_s).count { |i| i.include?(SEVEN) }
+end
+
+# It's short and clean enough to be one line. Only two concepts.
+def count_numbers_include_7(n)
+  ('1'..n.to_s).count(&:include_7?)
+end
+```
+It's hard to explain the measurement of concept deeply, but what I could say is about **Code Smell**.
+
 ## Fast Ruby
 Inspired by [fast-ruby](https://github.com/fastruby/fast-ruby). When I have more than one option to implement the code and logic, I will choose faster one.
 

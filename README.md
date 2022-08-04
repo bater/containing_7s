@@ -19,13 +19,48 @@ def count_numbers_content_7(n)
 end
 ```
 > **Note**
-> This method might refactor later but compute logic remain the same.
+> This method might be refactored later but the compute logic remain the same.
 
 We can split this as two part. Firstly, I create a `range` according to given max number N, which is `('1'..n.to_s)`.
 
 I make a `String` range instead of `Integer` for the next step.
 
 Secondly, I count the numbers which content 7 by `Range#count`, it inherit from [Enumerable#count](https://ruby-doc.org/core-2.7.1/Enumerable.html#method-i-count).
+
+## Validation
+TBD
+
+## Meta-programing
+TBD
+
+## Make small things
+I'd like to explian my design thinking about my code.
+
+Bascially, just try to **make it small**, make some small classes and small methods and keep it simple. I got this idea from RailsConf 2014 [All the Little Things by Sandi Metz](https://youtu.be/8bZh5LMaSmE), and I think this is one of my favorite conf talks.
+
+In this case, I can do it with one single line.
+```rb
+def count_numbers_content_7(n)
+  ('1'..n.to_s).count { |i| i.include?(SEVEN) }
+end
+```
+But consider not all the team member have the same chain methods preference, so I think it might worth to write as two simple privte method:
+```rb
+def count_numbers_content_7(n)
+  count_range_include_7(one_to_n(n))
+end
+
+private
+
+def one_to_n(n)
+  '1'..n.to_s
+end
+
+def count_range_include_7(range)
+  range.count { |i| i.include?(SEVEN) }
+end
+```
+In this style, the method is small and simple enough that not even need any comment and document, the code explain itself. And I believe the best document is readable code.
 
 ## Fast Ruby
 Inspired by [fast-ruby](https://github.com/fastruby/fast-ruby). When I have more than one option to implement the code and logic, I will choose faster one.

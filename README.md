@@ -57,7 +57,7 @@ def count_range_include_7(range)
   range.count { |i| i.include?(SEVEN) }
 end
 ```
-In this style, the method is small and simple enough that not even need any comment and document, the code explain itself. And I believe the best document is readable code.
+In this style, the method is small and simple enough that not even need any comment or document, **the code explain itself**. And I believe the best document is readable code.
 
 But in the end, after I added the `String#include_7?` on `core_ext.rb`, I think it's too simple that should be one line again. So this part become just an idea sharing only.
 

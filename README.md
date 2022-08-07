@@ -27,9 +27,6 @@ I make a `String` range instead of `Integer` for the next step.
 
 Secondly, I count the numbers which content 7 by `Range#count`, it inherit from [Enumerable#count](https://ruby-doc.org/core-2.7.1/Enumerable.html#method-i-count).
 
-## Validation
-TBD
-
 ## Make small things
 I'd like to explian my design thinking about my code.
 
